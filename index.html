@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="Melanie Swan: consumer insight, creative strategy, and growth partnerships portfolio.">
+<title>Melanie Swan — Consumer Insight &amp; Creative Strategy Portfolio</title>
+<style>
+/* Layout: matches the Loyalty & Lifecycle portfolio. Parchment page, ink hero and closing bands, brass accents, Georgia display over a system sans, 920px column. */
+:root{
+  --ink:#1B2430; --ink-soft:#2C3846; --brass:#B8935F; --brass-deep:#8C6D3F; --brass-pale:#E8DCC6;
+  --parchment:#F7F5EF; --panel:#FFFFFF; --slate:#5A6472; --slate-light:#8891A0; --line:#DDD5C4;
+  --hero-text:#EFE9DC; --hero-name:#F7F2E6; --decision-bg:#FBF8F1; --toolkit:#B7AF9E;
+  --serif:Georgia, "Times New Roman", serif;
+  --sans:-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--parchment);color:var(--ink);font-family:var(--sans);line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding-left:max(32px,env(safe-area-inset-left,0px));padding-right:max(32px,env(safe-area-inset-right,0px))}
+@media (max-width:520px){.wrap{padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}}
+a{color:var(--brass-deep);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+h1,h2,h3{text-wrap:balance}
+
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--parchment)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(247,245,239,.92);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:14px}
+.nav-name{font-family:var(--serif);font-size:16px;color:var(--ink);text-decoration:none}
+.nav-links{display:flex;gap:22px}
+.nav-links a{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--slate);text-decoration:none}
+.nav-links a:hover{color:var(--brass-deep)}
+@media (max-width:640px){.nav-links{display:none}}
+
+.eyebrow{font-size:11px;letter-spacing:2.6px;text-transform:uppercase;color:var(--brass-deep);font-weight:700}
+.section-tag{font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--slate-light)}
+.col-label{font-size:10px;letter-spacing:1.6px;text-transform:uppercase;color:var(--ink);font-weight:700;border-bottom:1px solid var(--brass);padding-bottom:6px;margin-bottom:10px}
+
+.hero{background:var(--ink);color:var(--hero-text);padding-block:110px 90px}
+.hero .eyebrow{color:var(--brass)}
+.hero-name{font-family:var(--serif);font-weight:400;font-size:clamp(46px,8vw,76px);line-height:1.03;margin:46px 0 0;color:var(--hero-name)}
+.hero-lede{font-size:17px;line-height:1.65;max-width:640px;margin:26px 0 0}
+.hero-links{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:34px;font-size:13px;align-items:center}
+.hero-links a{color:var(--brass);text-decoration:none;border-bottom:1px solid rgba(184,147,95,.45);padding-bottom:2px}
+.hero-links a:hover{color:var(--hero-name);border-color:var(--hero-name)}
+.copy{font:inherit;font-size:11px;letter-spacing:1px;text-transform:uppercase;background:transparent;color:var(--toolkit);border:1px solid rgba(184,147,95,.45);border-radius:2px;padding:4px 10px;cursor:pointer}
+.copy:hover{color:var(--hero-name)}
+
+section.block{padding-block:84px 20px}
+.h2{font-family:var(--serif);font-weight:400;font-size:clamp(26px,3.8vw,34px);line-height:1.25;margin:14px 0 0;max-width:720px}
+.intro{font-size:14.5px;line-height:1.75;color:var(--slate);max-width:680px;margin:18px 0 0}
+
+.stat-strip{display:flex;flex-wrap:wrap;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:44px}
+.stat{flex:1 1 22%;min-width:150px;padding:22px 18px;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat-num{font-family:var(--serif);font-size:28px;color:var(--brass-deep)}
+.stat-label{font-size:9.5px;letter-spacing:.8px;text-transform:uppercase;color:var(--slate);line-height:1.5;margin-top:4px}
+
+.pillars{margin-top:48px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:26px}
+@media (max-width:760px){.pillars{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.pillars{grid-template-columns:1fr}}
+.pillar-index{font-size:10px;color:var(--brass);font-weight:700;letter-spacing:1px}
+.pillar-title{font-family:var(--serif);font-size:15px;margin-top:9px}
+.pillar-copy{font-size:12px;line-height:1.7;color:var(--slate);margin-top:6px}
+
+.industries{margin-top:52px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.industry-chip{font-size:11px;padding:8px 15px;border:1px solid var(--line);border-radius:2px;color:var(--ink-soft);background:var(--panel)}
+
+.case{padding-top:72px}
+.case-head{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-bottom:20px;border-bottom:2px solid var(--ink);margin-bottom:26px;align-items:flex-end}
+.case-num{font-size:11px;letter-spacing:2px;color:var(--slate-light);text-transform:uppercase}
+.case-title{font-family:var(--serif);font-weight:400;font-size:clamp(24px,3.4vw,31px);line-height:1.24;color:var(--ink);max-width:680px;margin:8px 0 0}
+.case-sector{font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--slate-light)}
+.metric-row{margin-top:28px;display:flex;flex-wrap:wrap;gap:1px;background:var(--line);border:1px solid var(--line)}
+.metric{flex:1 1 22%;min-width:150px;background:var(--panel);padding:18px 16px}
+.metric-num{font-family:var(--serif);font-size:24px;color:var(--brass-deep);font-variant-numeric:tabular-nums}
+.metric-label{font-size:9px;letter-spacing:.5px;text-transform:uppercase;color:var(--slate);line-height:1.45;margin-top:5px}
+.decision-box{margin-top:26px;border-left:3px solid var(--brass);background:var(--decision-bg);padding:18px 24px}
+.decision-label{font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:var(--brass-deep);font-weight:700}
+.decision-copy{font-family:var(--serif);font-style:italic;font-size:14.5px;line-height:1.7;color:var(--ink-soft);margin:8px 0 0}
+.case-body{margin-top:32px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px}
+@media (max-width:760px){.case-body{grid-template-columns:1fr;gap:28px}}
+.case-body > div{min-width:0}
+.case-body p{font-size:13px;line-height:1.75;color:var(--ink-soft);margin:0}
+.friction-note{margin-top:12px;padding-top:12px;border-top:1px dotted var(--line);font-size:12px;line-height:1.7;color:var(--slate)}
+.case-footer{margin-top:30px;padding-top:18px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.role-label{font-size:9.5px;letter-spacing:1px;text-transform:uppercase;color:var(--slate-light)}
+.role-value{font-size:12.5px;color:var(--ink-soft);margin-top:4px;max-width:560px}
+.case-foot-mark{font-size:10px;font-style:italic;color:var(--slate-light);align-self:flex-end}
+
+.brief{margin-top:36px;background:var(--panel);border:1px solid var(--line)}
+.brief-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:16px 24px;border-bottom:2px solid var(--ink)}
+.spec{font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:var(--brass-deep);font-weight:700;border:1px solid var(--brass);padding:3px 8px;border-radius:2px}
+dl.bf{margin:0;display:grid;grid-template-columns:170px minmax(0,1fr)}
+dl.bf dt,dl.bf dd{margin:0;padding:14px 24px;border-bottom:1px solid var(--line)}
+dl.bf dt{font-size:10px;letter-spacing:1.6px;text-transform:uppercase;color:var(--brass-deep);font-weight:700;padding-top:17px}
+dl.bf dd{font-size:13.5px;line-height:1.7;color:var(--ink-soft)}
+dl.bf dd.insight{font-family:var(--serif);font-style:italic;font-size:15px}
+dl.bf dd ul{margin:0;padding-left:18px}
+dl.bf > :nth-last-child(-n+2){border-bottom:0}
+@media (max-width:640px){dl.bf{grid-template-columns:1fr} dl.bf dt{border-bottom:0;padding-bottom:0}}
+.tablewrap{overflow-x:auto}
+.script{width:100%;border-collapse:collapse;font-size:12.5px;min-width:460px}
+.script th,.script td{text-align:left;vertical-align:top;padding:8px 10px;border-bottom:1px solid var(--line)}
+.script th{font-size:9.5px;letter-spacing:1px;text-transform:uppercase;color:var(--slate-light);font-weight:600}
+.script td:first-child{white-space:nowrap;color:var(--brass-deep);font-variant-numeric:tabular-nums}
+
+.two-col{margin-top:36px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px}
+@media (max-width:760px){.two-col{grid-template-columns:1fr}}
+.two-col > div{min-width:0}
+.list{margin:0;padding:0;list-style:none}
+.list li{font-size:13px;line-height:1.7;color:var(--ink-soft);padding:9px 0;border-bottom:1px solid var(--line)}
+.list b{font-family:var(--serif);font-weight:400;color:var(--ink);font-size:14px}
+
+.closing{background:var(--ink);color:var(--hero-text);padding-block:100px 60px;margin-top:96px}
+.closing .eyebrow{color:var(--brass)}
+.closing-lede{font-family:var(--serif);font-size:clamp(26px,4.2vw,38px);line-height:1.35;color:var(--hero-name);margin:18px 0 0;max-width:720px}
+.closing-links{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:30px;font-size:14px;align-items:center}
+.closing-links a{color:var(--brass);text-decoration:none;border-bottom:1px solid rgba(184,147,95,.45);padding-bottom:2px}
+.closing-links a:hover{color:var(--hero-name);border-color:var(--hero-name)}
+.toolkit{margin-top:56px;padding-top:22px;border-top:1px solid rgba(184,147,95,.3)}
+.toolkit-row{font-size:11.5px;line-height:1.9;color:var(--toolkit)}
+.toolkit-row b{color:var(--brass);font-weight:600;letter-spacing:.5px}
+.closing-bottom{margin-top:30px;font-size:12px;color:var(--toolkit);display:flex;flex-wrap:wrap;gap:6px 22px}
+footer{text-align:center;padding:26px 0;font-size:10.5px;color:var(--slate-light);background:var(--parchment)}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Sections">
+  <div class="wrap">
+    <a class="nav-name" href="#top">Melanie Swan</a>
+    <div class="nav-links">
+      <a href="#approach">The Approach</a>
+      <a href="#cases">Case Studies</a>
+      <a href="#framework">Brief Framework</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="eyebrow">Consumer Insight &amp; Creative Strategy</div>
+    <h1 class="hero-name">Melanie Swan</h1>
+    <p class="hero-lede">Senior marketer who turns what customers actually need into creative briefs, campaigns, and partnerships that perform, across D2C digital commerce, hospitality, QSR, consumer products, telecommunications, and affinity marketing.</p>
+    <div class="hero-links">
+      <a href="mailto:mdswan25@outlook.com">mdswan25@outlook.com</a>
+      <button type="button" class="copy" data-copy="mdswan25@outlook.com">Copy email</button>
+      <a href="https://www.linkedin.com/in/melaniedswan/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://mdswan25.github.io/Melanie-Swan_Loyalty-Lifecycle-Marketing-Portfolio/" target="_blank" rel="noopener noreferrer">Loyalty &amp; Lifecycle Portfolio</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="block" id="approach">
+  <div class="wrap">
+    <div class="section-tag">The Approach · Overview</div>
+    <h2 class="h2">Find the reason people buy, write the brief around it, and let the results shape the next one.</h2>
+    <p class="intro">Every case below follows the same loop. I start with research (customer interviews, purchase behavior, competitive scans, brand tracking) and narrow it to one insight. That insight becomes a brief that gives creative, design, and content teams clear direction. After launch, A/B and holdout results become the research for the next round. AI tools speed up the research, ideation, and drafting, and I make the final call on creative direction.</p>
+
+    <div class="stat-strip">
+      <div class="stat"><div class="stat-num">15+</div><div class="stat-label">Years turning customer insight into campaigns</div></div>
+      <div class="stat"><div class="stat-num">$6M+</div><div class="stat-label">Combined marketing budgets directed</div></div>
+      <div class="stat"><div class="stat-num">5</div><div class="stat-label">Brands briefed from one insight backbone</div></div>
+      <div class="stat"><div class="stat-num">~40%</div><div class="stat-label">Faster content development with AI</div></div>
+    </div>
+
+    <div class="pillars">
+      <div><div class="pillar-index">01</div><div class="pillar-title">Consumer Research &amp; Insight</div><div class="pillar-copy">Interviews, journey mapping, purchase behavior, and competitive analysis, narrowed to the need that drives a purchase.</div></div>
+      <div><div class="pillar-index">02</div><div class="pillar-title">Creative Briefs &amp; Scripts</div><div class="pillar-copy">Single-minded propositions, messaging angles, and scripts that creative and agency teams can build from.</div></div>
+      <div><div class="pillar-index">03</div><div class="pillar-title">Performance Feedback Loops</div><div class="pillar-copy">A/B and holdout testing on headlines, imagery, offers, and CTAs, with results fed into the next concepts.</div></div>
+      <div><div class="pillar-index">04</div><div class="pillar-title">Strategic Partnerships</div><div class="pillar-copy">Co-branded partnerships coordinated end to end and reviewed against performance with leadership.</div></div>
+    </div>
+
+    <div class="industries">
+      <div class="section-tag">Industries Represented in the Following Case Studies</div>
+      <div class="chips">
+        <span class="industry-chip">D2C App &amp; Online Ordering</span>
+        <span class="industry-chip">Multi-Brand QSR</span>
+        <span class="industry-chip">Premium Haircare (CPG)</span>
+        <span class="industry-chip">Affinity Insurance</span>
+        <span class="industry-chip">Telecommunications</span>
+        <span class="industry-chip">B2B &amp; D2C Consulting</span>
+        <span class="industry-chip">Global Hospitality</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cases">
+  <div class="wrap">
+
+    <article class="case">
+      <div class="case-head">
+        <div><div class="case-num">Case Study 01</div><h3 class="case-title">Replacing Discounts With a Reason to Stay</h3></div>
+        <div class="case-sector">Global Consumer Products · Premium Haircare</div>
+      </div>
+      <div class="metric-row">
+        <div class="metric"><div class="metric-num">40% → 47%</div><div class="metric-label">Active member rate</div></div>
+        <div class="metric"><div class="metric-num">+14%</div><div class="metric-label">Revenue, year over year</div></div>
+        <div class="metric"><div class="metric-num">27%</div><div class="metric-label">ROI on $750K paid + owned</div></div>
+        <div class="metric"><div class="metric-num">20% → 25%</div><div class="metric-label">Premium segment share</div></div>
+      </div>
+      <div class="decision-box"><div class="decision-label">The Insight</div><p class="decision-copy">Competitive and customer research found underserved segments that a discount-led model wasn't reaching. The answer was a better reason to stay, not a bigger discount.</p></div>
+      <div class="case-body">
+        <div><div class="col-label">Research</div><p>The salon-professional loyalty program had lost relevance, and its budget wasn't performing. I led competitive analysis and customer research to find which segments the program was missing and why.</p></div>
+        <div><div class="col-label">Creative Direction</div><p>I rebuilt the value proposition around a non-discount tiered model built on access and experience. I wrote the briefs and directed 3–4 agency partners on campaigns, photo shoots, webpages, and trade show displays.</p></div>
+        <div><div class="col-label">Testing &amp; Learning</div><p>We tested headlines, imagery, value propositions, offers, and CTAs, and moved budget from legacy spend to what the tests proved. The program later expanded into EMEA.</p></div>
+      </div>
+      <div class="case-footer"><div><div class="role-label">My Role</div><div class="role-value">Senior Brand Manager, Loyalty Program: research, value proposition, briefs, agency direction</div></div><div class="case-foot-mark">Details anonymized</div></div>
+    </article>
+
+    <article class="case">
+      <div class="case-head">
+        <div><div class="case-num">Case Study 02</div><h3 class="case-title">One Insight Backbone, Five Brand Voices</h3></div>
+        <div class="case-sector">Multi-Brand Restaurant · D2C App &amp; Online Ordering</div>
+      </div>
+      <div class="metric-row">
+        <div class="metric"><div class="metric-num">+17%</div><div class="metric-label">12-month customer lifetime value</div></div>
+        <div class="metric"><div class="metric-num">22–24% → 30%</div><div class="metric-label">Loyalty penetration</div></div>
+        <div class="metric"><div class="metric-num">+21%</div><div class="metric-label">Partnership, digital &amp; program revenue</div></div>
+        <div class="metric"><div class="metric-num">+20%</div><div class="metric-label">Digital CSAT from ~75</div></div>
+      </div>
+      <div class="decision-box"><div class="decision-label">The Key Decision</div><p class="decision-copy">"One engine, five front doors": a shared segmentation and insight backbone, with each brand's creative team keeping its own voice, look, and rewards. Leadership adopted and funded it.</p></div>
+      <div class="case-body">
+        <div><div class="col-label">Research</div><p>Five restaurant brands ran customer marketing separately, so every team started from a blank page. Customer and co-marketing analysis showed the brands could share segmentation and lifecycle logic while still speaking in their own voices.</p></div>
+        <div><div class="col-label">Creative Direction</div><p>I turned purchase-behavior and segment insights into messaging angles and offers across the D2C app, online ordering, in-app, and email. I made the case to the CMO for AI-driven personalization, and it was funded.</p></div>
+        <div><div class="col-label">Partnerships</div><p>I coordinated co-branded partnerships with JetBlue and Fandango, ran bonus-points campaigns, and reviewed partner performance quarterly with VP leadership.</p>
+          <div class="friction-note">Two smaller brands pushed back. I slowed their rollout by a quarter and co-designed brand-specific rewards with them instead of forcing a launch.</div></div>
+      </div>
+      <div class="case-footer"><div><div class="role-label">My Role</div><div class="role-value">Enterprise Loyalty &amp; Customer Marketing Manager: framework design, personalization, partnerships</div></div><div class="case-foot-mark">Details anonymized</div></div>
+    </article>
+
+    <article class="case">
+      <div class="case-head">
+        <div><div class="case-num">Case Study 03</div><h3 class="case-title">Putting AI Into the Content Workflow</h3></div>
+        <div class="case-sector">National Affinity Insurance · ~30M Members</div>
+      </div>
+      <div class="metric-row">
+        <div class="metric"><div class="metric-num">~40%</div><div class="metric-label">Faster initial content development</div></div>
+        <div class="metric"><div class="metric-num">+12%</div><div class="metric-label">Referral pipeline in two quarters</div></div>
+        <div class="metric"><div class="metric-num">12 → 9 days</div><div class="metric-label">Member onboarding time</div></div>
+        <div class="metric"><div class="metric-num">$1M</div><div class="metric-label">Capital secured for testing infrastructure</div></div>
+      </div>
+      <div class="decision-box"><div class="decision-label">The Key Decision</div><p class="decision-copy">Build forecasting, segmentation, and testing before the pilot, so every message could be measured. Leadership funded it.</p></div>
+      <div class="case-body">
+        <div><div class="col-label">Research</div><p>There was no loyalty or referral program. Member interviews and journey mapping showed where enrollment stalled. A tenure-based segmentation didn't match who the best members were, so I rebuilt it around recency and referral behavior.</p></div>
+        <div><div class="col-label">Creative Direction</div><p>I briefed newsletters, member advocacy stories, and a ~200-member referral pilot, and rewrote complex benefits as plain-language messaging and call center scripts. All of it passed legal and compliance review.</p></div>
+        <div><div class="col-label">How AI Fit In</div><p>I used generative AI for research synthesis, copy ideation, message variations, brief structure, and first drafts, and Glean to find past briefs and approvals. A person reviewed every output for voice, accuracy, and compliance.</p></div>
+      </div>
+      <div class="case-footer"><div><div class="role-label">My Role</div><div class="role-value">Loyalty Marketing Manager (Contract): 0→1 program build, content strategy, AI workflow, $2.25M budget</div></div><div class="case-foot-mark">Details anonymized</div></div>
+    </article>
+
+    <article class="case">
+      <div class="case-head">
+        <div><div class="case-num">Case Study 04</div><h3 class="case-title">Letting Test Results Write the Next Brief</h3></div>
+        <div class="case-sector">Telecommunications · Residential &amp; Small Business</div>
+      </div>
+      <div class="metric-row">
+        <div class="metric"><div class="metric-num">+16%</div><div class="metric-label">Conversion vs. prior cycle</div></div>
+        <div class="metric"><div class="metric-num">+22%</div><div class="metric-label">Digital engagement</div></div>
+      </div>
+      <div class="decision-box"><div class="decision-label">The Key Decision</div><p class="decision-copy">Move from static lists to behavioral segmentation, and validate every message and offer against a holdout group.</p></div>
+      <div class="case-body">
+        <div><div class="col-label">Research</div><p>Campaigns ran on static, rule-based lists with manual QA, so they were slow to launch and hard to learn from. Real-time data was limited, so the plan had to work within the existing stack.</p></div>
+        <div><div class="col-label">Creative Direction</div><p>I scoped automation and personalization with CRM and engineering teams, redesigned omnichannel journeys, and briefed creative partners on webpages, collateral, and direct mail.</p></div>
+        <div><div class="col-label">Testing &amp; Learning</div><p>I shared results monthly with senior leadership and quarterly with the CMO, and used them to set the next cycle's priorities.</p>
+          <div class="friction-note">The first automated triggers sent too often and opt-outs spiked. I rebuilt the frequency and suppression rules to reduce unsubscribes and keep the engagement gains.</div></div>
+      </div>
+      <div class="case-footer"><div><div class="role-label">My Role</div><div class="role-value">Brand Manager, Lifecycle Customer Marketing (Contract): segmentation, journeys, testing, creative briefs</div></div><div class="case-foot-mark">Details anonymized</div></div>
+    </article>
+
+    <article class="case">
+      <div class="case-head">
+        <div><div class="case-num">Case Study 05</div><h3 class="case-title">Funnels and Content for D2C and B2B Brands</h3></div>
+        <div class="case-sector">Independent Consulting · 12 Engagements</div>
+      </div>
+      <div class="metric-row">
+        <div class="metric"><div class="metric-num">+15–35%</div><div class="metric-label">Conversion across 12 engagements</div></div>
+        <div class="metric"><div class="metric-num">+35%</div><div class="metric-label">Content performance</div></div>
+      </div>
+      <div class="case-body">
+        <div><div class="col-label">Research</div><p>Clients had traffic that wasn't converting and content that wasn't bringing in qualified leads. I researched each client's customers and market to find why they bought.</p></div>
+        <div><div class="col-label">Creative Direction</div><p>I defined positioning and messaging, wrote creative briefs and brand playbooks, and improved landing pages and online funnels.</p></div>
+        <div><div class="col-label">Testing &amp; Learning</div><p>I scored content and agency output against strategy and results, and presented recommendations to VPs, CEOs, and owners.</p></div>
+      </div>
+      <div class="case-footer"><div><div class="role-label">My Role</div><div class="role-value">Senior Brand Marketing Consultant: positioning, briefs, funnel and content strategy</div></div><div class="case-foot-mark">Details anonymized</div></div>
+    </article>
+
+  </div>
+</section>
+
+<section class="block" id="framework">
+  <div class="wrap">
+    <div class="section-tag">The Brief Framework</div>
+    <h2 class="h2">How I give creative, design, and content teams clear direction.</h2>
+    <p class="intro">I use the same brief structure across campaigns, channels, and industries, whether the work goes to an agency, an in-house studio, or an AI-assisted production team. Each field answers one question the team would otherwise have to guess at.</p>
+    <div class="brief">
+      <div class="brief-top"><span class="section-tag">Creative Brief · Field Guide</span><span class="spec">Evergreen Format</span></div>
+      <dl class="bf">
+        <dt>Objective</dt><dd>What should the customer do, and what business result does that move? One measurable goal per brief.</dd>
+        <dt>Audience</dt><dd>Who we're talking to, described by behavior and purchase motivation, not only demographics.</dd>
+        <dt>Insight</dt><dd class="insight">The one customer need or tension, drawn from research, that explains why people buy or hesitate.</dd>
+        <dt>Proposition</dt><dd>The single-minded thing we want the customer to believe, written in one sentence.</dd>
+        <dt>Reasons to Believe</dt><dd>The product benefits, proof points, and policies that make the proposition credible. Only claims we can stand behind.</dd>
+        <dt>Angles to Test</dt><dd>Two or three distinct messaging angles, each tied back to the insight, so testing tells us something useful.</dd>
+        <dt>Script &amp; Copy Direction</dt><dd><div class="tablewrap"><table class="script"><thead><tr><th>Beat</th><th>What It Does</th><th>Direction to the Team</th></tr></thead><tbody>
+          <tr><td>Hook</td><td>Earns attention in the first seconds</td><td>Open on the customer's tension, not the product.</td></tr>
+          <tr><td>Turn</td><td>Shows the product resolving it</td><td>One benefit, shown rather than listed.</td></tr>
+          <tr><td>Proof</td><td>Makes it believable</td><td>The strongest reason to believe, on screen or in copy.</td></tr>
+          <tr><td>Close</td><td>Asks for the action</td><td>Proposition line plus a single, clear CTA.</td></tr>
+        </tbody></table></div></dd>
+        <dt>Mandatories</dt><dd>Brand voice and guidelines, legal and compliance requirements, and anything the creative must or must not include.</dd>
+        <dt>Deliverables</dt><dd>Formats, sizes, channels, and variations, including hook or headline versions for testing.</dd>
+        <dt>Measure &amp; Learn</dt><dd>The metrics that define success for each angle, and how the results will shape the next brief.</dd>
+      </dl>
+    </div>
+
+    <div class="two-col">
+      <div>
+        <div class="col-label">The Scorecard I Use for Briefs &amp; Agencies</div>
+        <ul class="list">
+          <li><b>Strategic alignment.</b> Does it serve the business goal?</li>
+          <li><b>Audience insight.</b> Is it built on a real customer need?</li>
+          <li><b>Creative quality.</b> Is it distinctive and on brand?</li>
+          <li><b>Brief adherence.</b> Did the work answer the brief?</li>
+          <li><b>Execution.</b> On time, on budget, and accurate?</li>
+          <li><b>Results.</b> What did the numbers say?</li>
+          <li><b>Collaboration.</b> How well did the teams work together?</li>
+        </ul>
+      </div>
+      <div>
+        <div class="col-label">AI in My Workflow</div>
+        <ul class="list">
+          <li><b>Research.</b> Synthesis and competitive scans, checked against the original sources.</li>
+          <li><b>Ideation.</b> Messaging variations and hooks for each angle.</li>
+          <li><b>Briefs &amp; scripts.</b> Structure and first drafts, then rewritten for voice.</li>
+          <li><b>Operations.</b> Meeting recaps, action items, and finding past briefs and approvals.</li>
+          <li><b>Judgment.</b> I challenge the outputs. The final creative direction is my call.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<section class="closing" id="contact">
+  <div class="wrap">
+    <div class="eyebrow">Contact</div>
+    <p class="closing-lede">Let's find the next insight worth building on.</p>
+    <div class="closing-links">
+      <a href="mailto:mdswan25@outlook.com">mdswan25@outlook.com</a>
+      <button type="button" class="copy" data-copy="mdswan25@outlook.com">Copy email</button>
+      <a href="https://www.linkedin.com/in/melaniedswan/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://mdswan25.github.io/Melanie-Swan_Loyalty-Lifecycle-Marketing-Portfolio/" target="_blank" rel="noopener noreferrer">Loyalty &amp; Lifecycle Portfolio</a>
+    </div>
+    <div class="toolkit">
+      <div class="toolkit-row"><b>AI Tools</b> · ChatGPT · Claude · Gemini · MS Copilot · Copilot Studio · Glean</div>
+      <div class="toolkit-row"><b>Platforms</b> · Salesforce Marketing Cloud · Pardot · HubSpot · Braze · Paytronix · MailChimp · Campaign Monitor · Hootsuite</div>
+      <div class="toolkit-row"><b>Analytics</b> · Google Analytics · Power BI · Microsoft Dynamics</div>
+      <div class="toolkit-row"><b>Creative &amp; Collaboration</b> · Adobe Creative Suite · Canva · Monday.com · Slack</div>
+    </div>
+    <div class="closing-bottom"><span>770-820-6840</span><span>Mableton, GA · Remote, USA</span></div>
+  </div>
+</section>
+<footer>© 2026 Melanie Swan. Case study details anonymized.</footer>
+
+<script>
+document.querySelectorAll('.copy').forEach(function(b){
+  b.addEventListener('click',function(){
+    var t=b.getAttribute('data-copy');
+    function done(msg){b.textContent=msg;setTimeout(function(){b.textContent='Copy email'},1800)}
+    try{navigator.clipboard.writeText(t).then(function(){done('Copied')},function(){done(t)})}catch(e){done(t)}
+  });
+});
+</script>
+</body>
+</html>
